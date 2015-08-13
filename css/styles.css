@@ -1,23 +1,50 @@
 body {
-  background: #bbb;
-}
-
-.addTexture {
-  background-image: url(../img/BrownParcelPaper.jpg);
-}
-
-.addFontColor {
-  color: maroon;
-}
-
-.newFont {
-  font-family: 'Poiret One', cursive;
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: #333332;
+  font-family: Helvetica,Arial,sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: 83.33333333%;
+  margin-left: 8.33333333%;
+  margin-right: 8.33333333%;
+  margin-bottom: 2em;
 }
 
 h1 {
   text-align: center;
+}
+
+h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+h3 {
+  color: #bb0000;
+}
+
+p {
+  font-weight: bold;
+}
+
+article {
+  border-bottom: 4px double #777;
+  padding-bottom: 15px;
+}
+
+code {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+}
+
+.codeBox {
+  background-color: #bbb;
+  border: 3px solid black;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+  padding: 10px;
+  width: 75%;
 }
 
 button {
@@ -37,8 +64,81 @@ button {
   background-color: lightgreen;
   border: 5px single white;
   color: black;
+  margin-bottom: 15px;
+}
+
+#hideID {
+  width: 20%;
 }
 
 #showID {
   display: none;
+}
+
+.listHide {
+  display: none;
+}
+
+.listShow {
+  display: block;
+}
+
+.addTexture {
+  background-image: url(../img/BrownParcelPaper.jpg);
+}
+
+.secondTexture {
+  background-image: url(../img/CementTileable03_Thumb.jpg);
+}
+
+.addFontColor {
+  color: blue;
+}
+
+.secondFontColor {
+  color: yellow;
+}
+
+.newFont {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.secondFont {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.articleSlider {
+  height: 300px;
+}
+
+.slidingBox {
+  position: relative;
+  background: #0a0;
+  height: 250px;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 250px;
+  z-index: 100;
+  left: 0;
+  -webkit-transition: all .7s ease;
+  -moz-transition: all .7s ease;
+  -ms-transition: all .7s ease;
+  -o-transition: all .7s ease;
+  transition: all .7s ease;
+}
+
+.off {
+  left: -350px;
+}
+
+footer {
+  text-align: right;
+}
+
+small {
+  color: gray;
 }

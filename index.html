@@ -3,45 +3,221 @@
   <head>
     <meta charset="utf-8">
     <title>jQuery Sampler</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/scripts.js"></script>
 
     </script>
   </head>
   <body>
     <h1>Sampler of jQuery Methods and Effects</h1>
-    <h2>Resources</h2>
+
+    <article class="pageIntro">
+      <p>The object of this page is to give you some jQuery experiments to try on your own, and to point you toward other resources that might give you even more ideas.</p>
+      <p>
+        First, if you're still feeling a little shaky about jQuery and selectors, you might find this tutorial helpful: <a href="http://www.impressivewebs.com/jquery-tutorial-for-beginners/"></a>
+      </p>
+      <p>
+        Next, here's a list of jQuery ideas, with links to demos and a couple of partial code samples. (You can find the code for all of the actions on this page on this <a href="https://github.com/StephanieArgy/jQuerySampler" target="_blank">Github repo</a>.)
+      </p>
+      <p>
       <ul>
-        <li><a href="http://www.w3schools.com/jquery/jquery_examples.asp">jQuery Example Demos</a></li>
+        <li><a href="#articleHide">Hide Content</a></li>
+        <li><a href="#articleShow">Show Content</a></li>
+        <li><a href="#articleToggle">Toggle Content On and Off </a></li>
+        <li><a href="#articleAddClass">Add a Class</a></li>
+        <li><a href="#articlePageReload">Reload the Page</a></li>
+        <li><a href="#articleSlider">Slide Content on and Off Screen</a></li>
+        <li><a href="#articleInnerHTML">Insert New HTML Content</a></li>
+        <li><a href="#articleResources">Resources for More Info and Ideas</a></li>
       </ul>
-    <h2>Hide</h2>
-      <p id="hideID">
-        If you click on the button below, this paragraph will vanish.
+      </p>
+
+    </article>
+
+    <article class="jQueryExample" id="articleHide">
+      <h2>Hide Content</h2>
+      <h3>.hide()</h3>
+      <p>
+        If you click on the button below, this image will vanish.
       </p>
       <button type="button" name="button" id="hideButton">HIDE</button>
-    <h2>Show</h2>
+      <p>
+        <img src="img/Kellar.jpg" alt="Kellar and Lady" id="hideID"/>
+      </p>
+      <div class="codeBox">
+        <p>This is the code:</p>
+        <h3>HTML</h3>
+        <code>
+          &lt;img src="img/Kellar.jpg" <strong>id="hideID"</strong>/&gt;<br>
+          &lt;button type="button" name="button" <strong>id="hideButton"</strong>&gt;HIDE&lt;/button&gt;
+        </code>
+        <h3>jQuery</h3>
+        <code> $("#hideButton").click(function(){<br>
+                $("#hideID").hide();<br>
+            });</code>
+    </div>
     <p>
-      So what do you think will happen if you click on this button?
+      <ul>
+        <li><a href="http://api.jquery.com/hide/" target="blank">jQuery Documentation on .hide()</a></li>
+        <li><a href="http://www.w3schools.com/jquery/eff_hide.asp" target="blank">W3Schools Article on .hide()</a></li>
+      </ul>
     </p>
-    <button type="button" name="button" id="showButton">SHOW</button>
-    <p id="showID">
-      Isn't that amazing!
-    </p>
-    <h2>Add Class</h2>
-    <p>
-      Now maybe I'm tired of such gray, drab surroundings, and I'd like to add a little texture to the background...
-    </p>
-    <button type="button" name="button" id="addTextureButton">Add Texture</button>
-    <p>
-      Or maybe I'd like a different font color
-    </p>
-    <button type="button" name="button" id="fontColorButton">Change Font Color</button>
-    <p>
-      Or a totally different font all together...
-    </p>
-    <button type="button" name="button" id="newFontButton">Change Font</button>
-    <h2>Remove Class</h2>
+    </article>
+
+    <article class="jQueryExample" id="articleShow">
+      <h2>Show Content</h2>
+      <h3>.show()</h3>
+      <p>
+        So what do you think will happen if you click on this button?
+      </p>
+      <button type="button" name="button" id="showButton">SHOW</button>
+      <div id="showID">
+        <p>
+          <img src="img/Kellar02.jpg"/>
+        </p>
+        <div class="codeBox">
+          <p>This is the code to reveal a previously hidden div:</p>
+          <h3>HTML</h3>
+          <code>
+          &lt;div <strong>id="showID"</strong>&gt;
+            <em>[Your content here.]</em>
+          &lt;/div&gt;<br>
+          &lt;button type="button" name="button" <strong>id="showButton"</strong>&gt;SHOW&lt;/button&gt;
+          </code>
+          <h3>jQuery</h3>
+          <code>$("#showButton").click(function(){<br>
+                $("#showID").show();
+            });</code>
+        </div>
+      </div>
+    </article>
+
+    <article class="jQueryExample" id="articleToggle">
+      <h2>Toggle Content On and Off</h2>
+      <h3>.toggle()</h3>
+      <p>
+        Maybe you want to toggle content on and off, which could be useful for things like:
+      </p>
+      <button type="button" name="button" id="toggleButton">TOGGLE</button>
+      <div id="toggler" class="listHide">
+        <ul>
+          <li>Menus</li>
+          <li>Navigation</li>
+          <li>Tables of Contents</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="jQueryExample" id="articleAddClass">
+      <h2>Add a Class</h2>
+      <h3>.addClass</h3>
+      <p>
+        Now perhaps you're tired of such drab surroundings and would like to add a little texture to the background...
+      </p>
+      <button type="button" name="button" id="addTextureButton">Add Texture</button>
+      <p>
+        Or maybe you'd like a different font color...
+      </p>
+      <button type="button" name="button" id="fontColorButton">Change Font Color</button>
+      <p>
+        Or a fancy new font...
+      </p>
+      <button type="button" name="button" id="newFontButton">Change Font</button>
+      <p>
+        Or change everything at Once...
+      </p>
+      <button type="button" name="button" id="changeEverythingButton">Change EVERYTHING!</button>
+    </article>
+
+    <article class="jQueryExample" id="articlePageReload">
+      <h2>Reload the Page</h2>
+      <h3>location.reload();</h3>
+      <p>
+        Or maybe you're sorry about the mess your page has turned into and just want to reload it:
+      </p>
+      <button type="button" name="button" id="reloadButton">Reload This Page</button>
+    </article>
+
+    <article class="jQueryExample" id="articleSlider">
+      <h2>Slide Content on and Off Screen</h2>
+      <p>
+        You can also slide parts of the page on and off screen. There are many ways to do this; here's one that uses .toggleClass() and some fancy CSS:
+      </p>
+      <button type="button" name="button" id="sliderButton">Slide Me!</button>
+      <div class="slidingBox off">
+        &nbsp;
+      </div>
+      <div class="codeBox">
+        <p>This is the code:</p>
+        <h3>HTML</h3>
+        <code>
+          &lt;button type="button" name="button" id="sliderButton"&gt;Slide Me!&lt;/button&gt;<br>
+          &lt;div class="slidingBox off"&gt;<br>
+            &nbsp;
+          &lt;/div&gt;<br>
+        </code>
+        <h3>CSS</h3>
+        <code>.slidingBox {<br>
+          position: relative;<br>
+          background: #0a0;<br>
+          height: 250px;<br>
+          margin-right: auto;<br>
+          margin-top: 15px;<br>
+          width: 250px;<br>
+          z-index: 100;<br>
+          left: 0;<br>
+          -webkit-transition: all .7s ease;<br>
+          -moz-transition: all .7s ease;<br>
+          -ms-transition: all .7s ease;<br>
+          -o-transition: all .7s ease;<br>
+          transition: all .7s ease;<br>
+        }<br>
+        <br>
+        .slidingBox.off {<br>
+          left: -350px;<br>
+        }
+        </code>
+        <h3>jQuery</h3>
+        <code> $('#sliderButton').click(function() {<br>
+            $(".slidingBox").toggleClass('off');<br>
+          });</code>
+    </div>
+    </article>
+
+    <article class="jQueryExample" id="articleInnerHTML">
+      <h2>Insert New HTML Content</h2>
+      <h3>.html</h3>
+      <p>
+        You can use jQuery to find and replace HTML.  Say you're not a fan of Charles Dickens, and would rather read Mark Twain:
+      </p>
+      <button type="button" name="button" id="changeMyAuthor">Change My Author</button>
+        <blockquote class="authorText">
+          It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way--in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
+        </blockquote>
+      <p>
+        <ul>
+          <li><a href="http://api.jquery.com/html/">jQuery Documentation on .html</a></li>
+        </ul>
+      </p>
+    </article>
+
+      <article id="articleResources">
+        <h2>More jQuery Resources</h2>
+        <p>
+          <ul>
+            <li><a href="http://www.w3schools.com/jquery/jquery_examples.asp" target="_blank">Lots more jQuery Examples, from W3Schools</a></li>
+          </ul>
+        </p>
+      </article>
+
+<footer>
+  <small>&copy; Stephanie Argy 2015. Used by Permission</small>
+</footer>
+
   </body>
 </html>
