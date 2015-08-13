@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <title>jQuery Sampler</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Tangerine|Architects+Daughter|Poiret+One|Permanent+Marker' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -19,10 +18,10 @@
     <article class="pageIntro">
       <p>The object of this page is to give you some jQuery experiments to try on your own, and to point you toward other resources that might give you even more ideas.</p>
       <p>
-        First, if you're still feeling a little shaky about jQuery and selectors, you might find this tutorial helpful: <a href="http://www.impressivewebs.com/jquery-tutorial-for-beginners/"></a>
+        If you're still feeling a little shaky about jQuery and selectors, you might find it helpful to start by glancing at this tutorial: <a href="http://www.impressivewebs.com/jquery-tutorial-for-beginners/" target="_blank">www.impressivewebs.com/jquery-tutorial-for-beginners/</a>
       </p>
       <p>
-        Next, here's a list of jQuery ideas, with links to demos and a couple of partial code samples. (You can find the code for all of the actions on this page on this <a href="https://github.com/StephanieArgy/jQuerySampler" target="_blank">Github repo</a>.)
+        Next, here's a list of jQuery ideas, with links to demos and some code samples. (You can find the code for all of the actions on this page on this <a href="https://github.com/StephanieArgy/jQuerySampler" target="_blank">Github repo</a>.)
       </p>
       <p>
       <ul>
@@ -89,12 +88,22 @@
           &lt;/div&gt;<br>
           &lt;button type="button" name="button" <strong>id="showButton"</strong>&gt;SHOW&lt;/button&gt;
           </code>
+          <h3>CSS</h3>
+          <code>#showID {<br>
+            display: none;<br>
+          }</code>
           <h3>jQuery</h3>
           <code>$("#showButton").click(function(){<br>
                 $("#showID").show();
             });</code>
         </div>
       </div>
+      <p>
+        <ul>
+          <li><a href="http://api.jquery.com/show/" target="blank">jQuery Documentation on .show()</a></li>
+          <li><a href="http://www.w3schools.com/jquery/eff_show.asp" target="blank">W3Schools Article on .show()</a></li>
+        </ul>
+      </p>
     </article>
 
     <article class="jQueryExample" id="articleToggle">
@@ -111,11 +120,42 @@
           <li>Tables of Contents</li>
         </ul>
       </div>
+      <div class="codeBox">
+        <h3>HTML</h3>
+        <code>
+        &lt;button type="button" name="button" id="toggleButton"&gt;TOGGLE&lt;/button&gt;
+        &lt;div id="toggler" class="listHide"&gt;<br>
+                &lt;ul&gt;<br>
+                  &lt;li&gt;Menus&lt;/li&gt;<br>
+                  &lt;li&gt;Navigation&lt;/li&gt;<br>
+                  &lt;li&gt;Tables of Contents&lt;/li&gt;<br>
+                &lt;/ul&gt;<br>
+              &lt;/div&gt;
+        </code>
+        <h3>CSS</h3>
+        <code>.listHide {<br>
+          display: none;<br>
+        }<br></code>
+
+        <code>.listShow {<br>
+          display: block;<br>
+        }</code>
+        <h3>jQuery</h3>
+        <code>$("#toggleButton").click(function(){<br>
+                $("#toggler").toggleClass("listShow");<br>
+            });</code>
+      </div>
+      <p>
+        <ul>
+          <li><a href="http://api.jquery.com/toggle/" target="blank">jQuery Documentation on .toggle()</a></li>
+          <li><a href="http://www.w3schools.com/jquery/eff_toggle.asp" target="blank">W3Schools Article on .toggle()</a></li>
+        </ul>
+      </p>
     </article>
 
     <article class="jQueryExample" id="articleAddClass">
       <h2>Add a Class</h2>
-      <h3>.addClass</h3>
+      <h3>.addClass()</h3>
       <p>
         Now perhaps you're tired of such drab surroundings and would like to add a little texture to the background...
       </p>
@@ -132,6 +172,47 @@
         Or change everything at Once...
       </p>
       <button type="button" name="button" id="changeEverythingButton">Change EVERYTHING!</button>
+      <div class="codeBox">
+        <h3>HTML</h3>
+
+        <code>
+          &lt;button type="button" name="button" id="changeEverythingButton"&gt;Change EVERYTHING!&lt;/button&gt;
+        </code>
+
+        <h3>CSS</h3>
+        <code>
+          .secondTexture {<br>
+            background-image: url(../img/CementTileable03_Thumb.jpg);<br>
+          }<br>
+        </code>
+
+        <code>
+          .secondFontColor {<br>
+            color: yellow;<br>
+          }<br>
+        </code>
+
+        <code>
+          .secondFont {<br>
+            font-family: 'Permanent Marker', cursive;<br>
+            font-size: 1.2rem;<br>
+            font-weight: bold;<br>
+          }<br>
+        </code>
+
+        <h3>jQuery</h3>
+        <code>
+          $("#changeEverythingButton").click(function(){<br>
+          $("body" ).addClass("secondTexture").addClass("secondFontColor").addClass("secondFont");<br>
+          });
+        </code>
+      </div>
+      <p>
+        <ul>
+          <li><a href="http://api.jquery.com/addClass/" target="blank">jQuery Documentation on .addClass()</a></li>
+          <li><a href="http://www.w3schools.com/jquery/html_addclass.asp" target="blank">W3Schools Article on .addClass()</a></li>
+        </ul>
+      </p>
     </article>
 
     <article class="jQueryExample" id="articlePageReload">
@@ -141,6 +222,19 @@
         Or maybe you're sorry about the mess your page has turned into and just want to reload it:
       </p>
       <button type="button" name="button" id="reloadButton">Reload This Page</button>
+      <div class="codeBox">
+        <h3>jQuery</h3>
+        <code>
+          $("#reloadButton").click(function(){<br>
+          location.reload();<br>
+          });
+        </code>
+      </div>
+      <p>
+        <ul>
+          <li><a href="http://www.w3schools.com/jsref/met_loc_reload.asp" target="blank">W3Schools Article on Location reload()</a></li>
+        </ul>
+      </p>
     </article>
 
     <article class="jQueryExample" id="articleSlider">
@@ -187,18 +281,50 @@
             $(".slidingBox").toggleClass('off');<br>
           });</code>
     </div>
+    <p>
+      <ul>
+        <li><a href="https://www.codecademy.com/en/skills/make-an-interactive-website" target="_blank">Another way of thinking about a sliding panel, from Codecademy</a></li>
+      </ul>
+    </p>
+
     </article>
 
     <article class="jQueryExample" id="articleInnerHTML">
       <h2>Insert New HTML Content</h2>
-      <h3>.html</h3>
+      <h3>.html()</h3>
       <p>
         You can use jQuery to find and replace HTML.  Say you're not a fan of Charles Dickens, and would rather read Mark Twain:
       </p>
       <button type="button" name="button" id="changeMyAuthor">Change My Author</button>
-        <blockquote class="authorText">
-          It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way--in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
-        </blockquote>
+      <blockquote class="authorText">
+        It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way--in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
+      </blockquote>
+      <div class="codeBox">
+        <h3>HTML</h3>
+        <code>
+          &lt;button type="button" name="button" id="changeMyAuthor">Change My Author&lt;/button&gt;<br>
+          &lt;blockquote class="authorText"&gt;
+            <em>[Original text here.]</em>
+          &lt;/blockquote&gt;
+        </code>
+        <h3>CSS</h3>
+        <code>.authorText {<br>
+            font-family: 'Tangerine', cursive;<br>
+            font-size: 2rem;<br>
+          }<br>
+        </code>
+        <code>
+        .twainFont {<br>
+          font-family: 'Architects Daughter', cursive;<br>
+          font-size: 1.5rem;<br>
+        }</code>
+        <h3>jQuery</h3>
+        <code>
+          $("#changeMyAuthor").click(function() {<br>
+          $(".authorText").html("<em>[New Text Here]</em>").addClass("twainFont");<br>
+          });
+        </code>
+      </div>
       <p>
         <ul>
           <li><a href="http://api.jquery.com/html/">jQuery Documentation on .html</a></li>
@@ -211,6 +337,7 @@
         <p>
           <ul>
             <li><a href="http://www.w3schools.com/jquery/jquery_examples.asp" target="_blank">Lots more jQuery Examples, from W3Schools</a></li>
+            <li><a href="http://www.webmonkey.com/2010/02/get_started_with_jquery/">Get Started with jQuery</a></li>
           </ul>
         </p>
       </article>

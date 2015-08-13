@@ -9,21 +9,21 @@ body {
   margin-bottom: 2em;
 }
 
-h1 {
-  text-align: center;
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica,Arial,sans-serif;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: .01em;
 }
 
-h2 {
-  margin-bottom: 0;
-  padding-bottom: 0;
+h1 {
+    font-size: 2rem;
+    line-height: .8125;
+    margin-bottom: 1.625rem;
 }
 
 h3 {
   color: #bb0000;
-}
-
-p {
-  font-weight: bold;
 }
 
 article {
@@ -132,7 +132,17 @@ button {
 }
 
 .off {
-  left: -350px;
+  left: -400px;
+}
+
+.authorText {
+  font-family: 'Tangerine', cursive;
+  font-size: 2rem;
+}
+
+.twainFont {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.5rem;
 }
 
 footer {
